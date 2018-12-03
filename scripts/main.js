@@ -6,20 +6,21 @@ const submitBtnElement = document.querySelector('.submit-btn');
 
 const tipBoxElement = document.querySelector('.tip-box');
 
-const tryMeterElement = document.querySelector('.try-meter');
+const attemptsMeterElement = document.querySelector('.attempts-meter');
 
 const generatedRandomNumber = getRandomNumber(100);
+
+let acc = 0;
 
 // Función que genera un número aleatorio hasta un máximo dado
 function getRandomNumber(max) {
     return Math.ceil(Math.random() * max);
 }
 
-// Se pinta en la consola un número random hasta 100
-console.log('> ' + getRandomNumber(100));
-
 function handleSubmitBtn(event) {
     event.preventDefault();
+
+    console.log(userNumberElement.value);
 
     if (parseInt(userNumberElement.value) === generatedRandomNumber) {
         tipBoxElement.innerHTML = '¡HAS GANADO, CAMPEONA!';
@@ -28,6 +29,10 @@ function handleSubmitBtn(event) {
     } else if (parseInt(userNumberElement.value) > generatedRandomNumber) {
         tipBoxElement.innerHTML = 'Demasiado alto';
     }
+
+    //Necesito almacenar en acc el número de veces que se pulsa el botón de submit, y luego recoger eso en el trymeterelement
+    
+    //attemptsMeterElement.innerHTML = numberOfAttempts;
 }
 
 submitBtnElement.addEventListener('click', handleSubmitBtn);
