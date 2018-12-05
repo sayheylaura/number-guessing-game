@@ -32,7 +32,7 @@ function handleSubmitBtn(event) {
         tipBoxElement.innerHTML = '¡HAS GANADO, CAMPEONA!';
     } else if (userNumberValue < generatedRandomNumber) {
         tipBoxElement.innerHTML = 'Demasiado bajo';
-    } else if (userNumberValue > generatedRandomNumber) {
+    } else {
         tipBoxElement.innerHTML = 'Demasiado alto';
     }
 
