@@ -25,9 +25,13 @@ function getRandomNumber(max) {
 
 // Función que compara el número que introduce la usuaria con el número aleatorio generado. En función de la respuesta, se pinta un feedback diferente en la caja de pistas
 function compareNumbers() {
+    // Guardo en una constante el valor que introduce la usuaria parseado, para que en el if se comparen valores del mismo tipo
     const userNumberValue = parseInt(userNumberEl.value);
+    
+    // Muestro en la consola el número que ha introducido la usuaria
     console.log(userNumberValue);
 
+    // Defino las comparaciones necesarias para poder dar pistas a la usuaria
     if (userNumberValue === generatedRandomNumber) {
         tipBoxEl.innerHTML = '¡HAS GANADO, CAMPEONA!';
     } else if (userNumberValue < generatedRandomNumber) {
@@ -42,7 +46,7 @@ function handleSubmitBtn(event) {
     // Evito que al pulsar el botón "Prueba" se recargue la página (funcionalidad por defecto del type "submit")
     event.preventDefault();
 
-    // Ejecuto la función que compara el número introducido por la usuaria y el número aleatorio, y que pinta un feedback distinto dependiendo del caso
+    // Ejecuto la función que compara el número introducido por la usuaria y el número aleatorio, y que pinta un feedback distinto dependiendo del caso. Porque quiero que esta función se ejecute cuando la usuaria hace click, y no antes o en otro momento
     compareNumbers();
 
     //Contador: cada vez que se pulsa el botón "Prueba", el acumulador suma 1 y su valor se pinta en la caja HTML del contador
