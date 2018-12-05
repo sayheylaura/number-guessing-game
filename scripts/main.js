@@ -24,13 +24,15 @@ function getRandomNumber(max) {
 function handleSubmitBtn(event) {
     event.preventDefault();
 
-    console.log(userNumberElement.value);
+    const userNumberValue = parseInt(userNumberElement.value);
 
-    if (parseInt(userNumberElement.value) === generatedRandomNumber) {
+    console.log(userNumberValue);
+
+    if (userNumberValue === generatedRandomNumber) {
         tipBoxElement.innerHTML = '¡HAS GANADO, CAMPEONA!';
-    } else if (parseInt(userNumberElement.value) < generatedRandomNumber) {
+    } else if (userNumberValue < generatedRandomNumber) {
         tipBoxElement.innerHTML = 'Demasiado bajo';
-    } else if (parseInt(userNumberElement.value) > generatedRandomNumber) {
+    } else if (userNumberValue > generatedRandomNumber) {
         tipBoxElement.innerHTML = 'Demasiado alto';
     }
 
