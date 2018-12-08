@@ -43,7 +43,7 @@ function compareNumbers() {
 
 // Función callback que se ejecuta cuando la usuaria pulsa el botón "Prueba"
 function handleSubmitBtn(event) {
-    // Evito que al pulsar el botón "Prueba" se recargue la página (funcionalidad por defecto del type "submit")
+    // Evito que al pulsar el botón "Prueba" se recargue la página (funcionalidad por defecto del type "submit" dentro de un formulario)
     event.preventDefault();
 
     // Ejecuto la función que compara el número introducido por la usuaria y el número aleatorio, y que pinta un feedback distinto dependiendo del caso. Porque quiero que esta función se ejecute cuando la usuaria hace click, y no antes o en otro momento
